@@ -1,4 +1,4 @@
-# QGroundControl Ground Control Station
+# QGroundControl Ground Control Station is optimized for using in controlling Autonomous Underwater Vehicle
 
 [![Releases](https://img.shields.io/github/release/mavlink/QGroundControl.svg)](https://github.com/mavlink/QGroundControl/releases)
 [![Travis Build Status](https://travis-ci.org/mavlink/qgroundcontrol.svg?branch=master)](https://travis-ci.org/mavlink/qgroundcontrol)
@@ -23,3 +23,4 @@ Key Links:
 * [Discussion/Support](https://docs.qgroundcontrol.com/en/Support/Support.html)
 * [Contributing](https://dev.qgroundcontrol.com/en/contribute/)
 * [License](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md)
+* [My AUV] (https://www.behance.net/gallery/120504005/Autonomous-Underwater-Vehicle?tracking_source=for_you_feed_user_published)
