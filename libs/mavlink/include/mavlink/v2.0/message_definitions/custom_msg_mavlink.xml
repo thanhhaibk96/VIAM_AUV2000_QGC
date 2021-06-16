@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>ardupilotmega.xml</include>
+  <include>common.xml</include>
+  <!-- Vendors -->
+  <include>uAvionix.xml</include>
+  <include>icarous.xml</include>
+	<messages>
+	  <message id="396" name="CUSTOM_MSG_PISTOL">
+	      <wip/>
+	      <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+	      <description>Information about a pistol'status of AUV</description>
+	      <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+	      <field type="float" name="position">The position of Pistol in AUV</field>
+	      <field type="float" name="motor_duty">The duty cycle (PWM) of Pistol's motor</field>
+	      <field type="float" name="motor_temp">The temperature of Pistol's motor</field>
+	      <field type="float" name="motor_current">The current of Pistol's motor</field>
+	      <field type="float" name="motor_rspeed">The current speed of Pistol's motor</field>
+	      <field type="float" name="motor_dspeed">The desired speed of Pistol's motor</field>
+	    </message>
+	    <message id="397" name="CUSTOM_MSG_MASS_SHIFTER">
+	      <wip/>
+	      <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+	      <description>Information about a mass shifter'status of AUV</description>
+	      <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
+	      <field type="float" name="position">The position of mass shifter in AUV</field>
+	      <field type="float" name="motor_duty">The duty cycle (PWM) of mass shifter's motor</field>
+	      <field type="float" name="motor_temp">The temperature of mass shifter's motor</field>
+	      <field type="float" name="motor_current">The current of mass shifter's motor</field>
+	      <field type="float" name="motor_rspeed">The current speed of mass shifter's motor</field>
+	      <field type="float" name="motor_dspeed">The desired speed of mass shifter's motor</field>
+	    </message>
+    </messages>
+</mavlink>

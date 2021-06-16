@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>CustomSliderMassPistol.qml</file>
+        <file>APMControlComponentSub.qml</file>
+        <file>QGCInformation.qml</file>
+        <file>BatteryHeadIndicator.qml</file>
+        <file>BatteryTailIndicator.qml</file>
+        <file>BatteryMotorIndicator.qml</file>
+        <file>BoardStatusPageWidget.qml</file>
+        <file>SpeedNeedle.qml</file>
+        <file>SpeedMeter.qml</file>
+        <file>CustomThrusterFlightView.qml</file>
+        <file>AngleNeedle.qml</file>
+        <file>RudderMeter.qml</file>
+        <file>CustomRudderStatus.qml</file>
+        <file>CustomCamera.qml</file>
+        <file>CustomAUVControl.qml</file>
+        <file>CustomQGCTextField.qml</file>
+        <file>CustomFactTextField.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,38 @@
+[
+{
+    "name":             "ARM1",
+    "shortDescription": "ARM1 Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+},
+{
+    "name":             "ARM2",
+    "shortDescription": "ARM2 Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+},
+{
+    "name":             "VIAM_NAVI",
+    "shortDescription": "VIAM_NAVI Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+},
+{
+    "name":             "PISTOL",
+    "shortDescription": "PISTOL Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+},
+{
+    "name":             "MASS_SHIFTER",
+    "shortDescription": "MASS_SHIFTER Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+},
+{
+    "name":             "THRUSTER",
+    "shortDescription": "THRUSTER Board Status",
+    "type":             "bool",
+    "decimalPlaces":    1
+}
+]

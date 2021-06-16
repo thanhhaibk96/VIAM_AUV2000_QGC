@@ -1,0 +1,21 @@
+[
+{
+    "name":             "altimeter_Fathoms",
+    "shortDescription": "Altimeter (Fathoms)",
+    "type":             "float",
+    "decimalPlaces":    1
+},
+{
+    "name":             "altimeter_Metres",
+    "shortDescription": "Altimeter (Metres)",
+    "type":             "float",
+    "decimalPlaces":    1
+},
+{
+    "name":             "altimeter_Feet",
+    "shortDescription": "Altimeter (Feet)",
+    "type":             "float",
+    "decimalPlaces":    1
+}
+
+]
