@@ -23,4 +23,4 @@ Key Links:
 * [Discussion/Support](https://docs.qgroundcontrol.com/en/Support/Support.html)
 * [Contributing](https://dev.qgroundcontrol.com/en/contribute/)
 * [License](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md)
-* [My AUV] (https://www.behance.net/gallery/120504005/Autonomous-Underwater-Vehicle?tracking_source=for_you_feed_user_published)
+* [My AUV](https://www.behance.net/gallery/120504005/Autonomous-Underwater-Vehicle?tracking_source=for_you_feed_user_published)
