@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>CustomSliderMassPistol.qml</file>
+        <file>CustomSliderMassPistolRoll.qml</file>
         <file>APMControlComponentSub.qml</file>
         <file>QGCInformation.qml</file>
         <file>BatteryHeadIndicator.qml</file>

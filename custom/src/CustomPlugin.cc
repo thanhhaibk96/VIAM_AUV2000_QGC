@@ -56,7 +56,7 @@ void CustomPlugin::addSettingsEntry(const QString& title, const char* qmlFile,
 
 QmlObjectListModel* CustomPlugin:: customMapItems(void)
 {
-    _customMapItems.append(new QmlComponentInfo(tr("Custom Mass-Shifter/Pistol"), QUrl::fromUserInput("qrc:/CustomSliderMassPistol.qml"), QUrl(), this));
+    _customMapItems.append(new QmlComponentInfo(tr("Custom Mass-Shifter/Pistol/Roll"), QUrl::fromUserInput("qrc:/CustomSliderMassPistolRoll.qml"), QUrl(), this));
     _customMapItems.append(new QmlComponentInfo(tr("Custom Thruster"), QUrl::fromUserInput("qrc:/CustomThrusterFlightView.qml"), QUrl(), this));
     _customMapItems.append(new QmlComponentInfo(tr("Custom Rudder"), QUrl::fromUserInput("qrc:/CustomRudderStatus.qml"), QUrl(), this));
 //    _customMapItems.append(new QmlComponentInfo(tr("Custom Camera"), QUrl::fromUserInput("qrc:/CustomCamera.qml"), QUrl(), this));

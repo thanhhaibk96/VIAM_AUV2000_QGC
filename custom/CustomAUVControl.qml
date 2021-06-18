@@ -826,7 +826,6 @@ Item {
 
                            // _activeVehicle.setAUVController(_indexController , 0)
                         }
-
                     }
                 }
             }

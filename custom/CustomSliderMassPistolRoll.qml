@@ -44,6 +44,14 @@ Item {
     property real   _tempOnChip_Pis:  _activeVehicle.pistolTempOnChip
     property real   _tempMotor_Pis:   _activeVehicle.pistolTempAmbient
 
+    ///Property for Roll
+    property real   _valueRoll: _activeVehicle.rollPosition
+    property real   _maxValueRoll: 30.0
+    property real   _minValueRoll: -30.0
+    property real   _rangeRoll:         Math.abs(_maxValueRoll - _minValueRoll)
+    property real   _minIncrementRoll:  _rangeRoll/50
+    property bool   _showDialogStatusRoll: false
+
     property int    precision:      2
 
     function editShowDialog(_visible){
@@ -162,7 +170,7 @@ Item {
                     width:              parent.width - minLabelMassShifter.width - maxLabelMassShifter.width - 30 * 2
                     maximumValue:       _maxValueMassShifter.toFixed(precision)
                     minimumValue:       _minValueMassShifter.toFixed(precision)
-                    stepSize:           0.1
+                    stepSize:           _minIncrementMassShifter
                     value:              _valueMassShifter
                     tickmarksEnabled:   true
 //                    onValueChanged: {
@@ -356,7 +364,7 @@ Item {
                     id:                 slidePistol
                     width:              parent.width - minLabelPistol.width - maxLabelPistol.width - 30 * 2
                     maximumValue:       _maxValuePistol
-                    stepSize:           0.1
+                    stepSize:           _minIncrementPistol
                     value:              _valuePistol
                     tickmarksEnabled:   true
 //                    onValueChanged: {
@@ -451,6 +459,122 @@ Item {
                                 font.pointSize:      10
                             }
                         }
+
+                        Rectangle{
+                            width: parent.width
+                            height: 1
+                        } // Draw line
+                    }
+                }
+            }
+
+
+            Flow{
+                id: flowRoll
+                width:              parent.width
+                layoutDirection:    Qt.LeftToRight
+                spacing:            8
+
+                Repeater{
+                    model: _showDialogStatusRoll? 1 : 0
+                    Loader {
+                        sourceComponent: _showDialogStatusRoll ? componentStatusRoll : undefined
+                    }
+                }
+            }
+            // ROLL-HEAD
+            Component{
+                id: componentStatusRoll
+                Rectangle
+                {
+                    width: parent.parent.width - 10*2
+                    height: coverColumnRoll.height + 8
+                    anchors.left: parent.left
+                    anchors.leftMargin: 10
+                    color: "transparent"
+                    Column{
+                        id: coverColumnRoll
+                        width: parent.width
+                        anchors.top: parent.top
+                        anchors.topMargin: 6
+                        spacing: 6
+                        anchors.horizontalCenter: parent.horizontalCenter
+
+                        Row{
+                             spacing: 8
+                             x: parent.x
+                             // Used to find width of value string
+                             QGCLabel {
+                                 anchors.verticalCenter: parent.verticalCenter
+                                 text: "ANTI-ROLL"
+                                 width:  110
+                                 font.bold: true
+                             }
+
+                             // Row container for Value: xx.xx +/- (different spacing than parent)
+                             Row {
+                                 spacing:                ScreenTools.defaultFontPixelWidth
+                                 anchors.verticalCenter: parent.verticalCenter
+
+                                 QGCLabel {
+                                     text:                   "Value: "
+                                     anchors.verticalCenter: parent.verticalCenter
+                                 }
+
+                                 FactTextField {
+                                     anchors.verticalCenter: parent.verticalCenter
+                                     showUnits:              false
+                                     showHelp:               false
+                                     text:                   _valueRoll.toFixed(precision)
+                                     width:                  50
+                                     height:                 30
+                                     horizontalAlignment:        Text.AlignHCenter
+                                     readOnly:               true
+                                 }
+
+                                 QGCLabel {
+                                     text:                   "degree"
+                                     anchors.verticalCenter: parent.verticalCenter
+                                 }
+                             }
+                         }
+
+                        Row {
+                            width:      parent.width
+                            spacing:    2
+
+                            Rectangle {
+                                width: 15; height: 15
+                                color: "transparent"
+                            }
+
+                            QGCLabel {
+                                id:                  minLabelRoll
+                                width:               ScreenTools.defaultFontPixelWidth * 4
+                                text:                _minValueRoll.toFixed(precision)
+                                horizontalAlignment: Text.AlignRight
+                            }
+
+                            QGCSlider {
+                                id:                 slideRoll
+                                width:              parent.width - minLabelRoll.width - maxLabelRoll.width - 20 * 2
+                                maximumValue:       _maxValueRoll
+                                stepSize:           _minIncrementRoll
+                                value:              _valueRoll
+                                tickmarksEnabled:   true
+                            } // Slider
+
+                            QGCLabel {
+                                id:     maxLabelRoll
+                                width:  ScreenTools.defaultFontPixelWidth * 5
+                                text:   _maxValueRoll.toFixed(precision)
+                            }
+
+                            Rectangle {
+                                width: 15; height: 15
+                                color: "transparent"
+                            }
+                        }
                     }
                 }
             }
@@ -478,6 +602,7 @@ Item {
                 onClicked: {
                     _showDialogStatusMassShifter = root.editShowDialog(_showDialogStatusMassShifter)
                     _showDialogStatusPistol = root.editShowDialog(_showDialogStatusPistol)
+                    _showDialogStatusRoll = root.editShowDialog(_showDialogStatusRoll)
                 }
             }
         }
