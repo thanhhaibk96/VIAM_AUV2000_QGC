@@ -2076,17 +2076,17 @@ void Vehicle::_handleBoardARM1(mavlink_message_t& message)
     mavlink_custom_msg_board_arm1_t board_arm1;
     mavlink_msg_custom_msg_board_arm1_decode(&message, &board_arm1);
 
-    _pistolLSHead = board_arm1.ls_pistol_athead;
-    emit pistolLSHeadChanged(_pistolLSHead);
+//    _pistolLSHead = board_arm1.ls_pistol_athead;
+//    emit pistolLSHeadChanged(_pistolLSHead);
 
-    _pistolLSTail = board_arm1.ls_pistol_attail;
-    emit pistolLSTailChanged(_pistolLSTail);
+//    _pistolLSTail = board_arm1.ls_pistol_attail;
+//    emit pistolLSTailChanged(_pistolLSTail);
 
-    _mass_shifterLSHead = board_arm1.ls_mass_shifter_athead;
-    emit mass_shifterLSHeadChanged(_mass_shifterLSHead);
+//    _mass_shifterLSHead = board_arm1.ls_mass_shifter_athead;
+//    emit mass_shifterLSHeadChanged(_mass_shifterLSHead);
 
-    _mass_shifterLSTail = board_arm1.ls_mass_shifter_attail;
-    emit mass_shifterLSTailChanged(_mass_shifterLSTail);
+//    _mass_shifterLSTail = board_arm1.ls_mass_shifter_attail;
+//    emit mass_shifterLSTailChanged(_mass_shifterLSTail);
 
     _altimeterFactGroup.Altimeter_inFeet()->setRawValue(board_arm1.altimeter_in_feet);
     _altimeterFactGroup.Altimeter_inMetres()->setRawValue(board_arm1.altimeter_in_metres);

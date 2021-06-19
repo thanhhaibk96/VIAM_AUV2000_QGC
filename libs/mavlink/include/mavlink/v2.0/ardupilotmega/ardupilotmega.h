@@ -153,14 +153,19 @@ typedef enum MAV_CMD
    MAV_CMD_SET_CAMERA_ZOOM=531, /* Set camera zoom. Camera must respond with a CAMERA_SETTINGS message (on success). Use NaN for reserved values. |Zoom type| Zoom value. The range of valid values depend on the zoom type.| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
    MAV_CMD_SET_CAMERA_FOCUS=532, /* Set camera focus. Camera must respond with a CAMERA_SETTINGS message (on success). Use NaN for reserved values. |Focus type| Focus value| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
    MAV_CMD_SET_AUV_CONTROLLER=533, /* Set AUV Controller:
-                    HEADING_PID --> 1
-                    HEADING_SM --> 2
-                    PITCH_PID --> 3
-                    PITCH_SM --> 4
-                    DEPTH_PID --> 5
-                    DEPTH_SM --> 6
-                    LOS_PID --> 7
-                    LOS_SM --> 8 |Select type of Controller| 0: Disable, 1: Enable| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+                      HEADING_PID : 1
+                      HEADING_SM : 2
+                      PITCH_PID : 3
+                      PITCH_SM : 4
+                      DEPTH_PID : 5
+                      DEPTH_SM : 6
+                      LOS_PID : 7
+                      LOS_SM : 8
+                      SPEED_PID : 9
+                      SPEED_SM : 10
+                      ROLL_PID : 11
+                      ROLL_SM : 12 |Select type of Controller| 0: Disable, 1: Enable| Reserved| Reserved| Reserved| Reserved| Reserved|  */
+   MAV_CMD_ENABLE_AUV_LIGHT=534, /* Enable/Disable Light Of AUV |0: Disable, 1: Enable| Reserved| Reserved| Reserved| Reserved| Reserved| Reserved|  */
    MAV_CMD_JUMP_TAG=600, /* Tagged jump target. Can be jumped to with MAV_CMD_DO_JUMP_TAG. |Tag.| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
    MAV_CMD_DO_JUMP_TAG=601, /* Jump to the matching tag in the mission list. Repeat this action for the specified number of times. A mission should contain a single matching tag for each jump. If this is not the case then a jump to a missing tag should complete the mission, and a jump where there are multiple matching tags should always select the one with the lowest mission sequence number. |Target tag to jump to.| Repeat count| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
    MAV_CMD_IMAGE_START_CAPTURE=2000, /* Start image capture sequence. Sends CAMERA_IMAGE_CAPTURED after each capture. Use NaN for reserved values. |Reserved (Set to 0)| Desired elapsed time between two consecutive pictures (in seconds). Minimum values depend on hardware (typically greater than 2 seconds).| Total number of images to capture. 0 to capture forever/until MAV_CMD_IMAGE_STOP_CAPTURE.| Capture sequence number starting from 1. This is only valid for single-capture (param3 == 1). Increment the capture ID for each capture command to prevent double captures when a command is re-transmitted. Use 0 to ignore it.| Reserved (all remaining params)| Reserved (default:0)| Reserved (default:0)|  */

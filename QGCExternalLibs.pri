@@ -46,7 +46,7 @@ isEmpty(MAVLINK_CONF) {
         message($$sprintf("Using user-supplied mavlink dialect '%1' specified in user_config.pri", $$MAVLINK_CONF))
     } else {
         #MAVLINK_CONF = ardupilotmega
-        MAVLINK_CONF = custom_msg_mavlink
+        MAVLINK_CONF = viam_auv2000
     }
 }
 
